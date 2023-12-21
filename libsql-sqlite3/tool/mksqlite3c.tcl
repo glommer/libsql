@@ -378,6 +378,7 @@ set flist {
    mutex_noop.c
    mutex_unix.c
    mutex_w32.c
+   mem_secure.c
    malloc.c
    printf.c
    treeview.c

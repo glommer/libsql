@@ -186,6 +186,7 @@ LIBOBJS0 = alter.lo analyze.lo attach.lo auth.lo \
 	 fts5.lo \
          func.lo global.lo hash.lo \
          icu.lo insert.lo json.lo legacy.lo loadext.lo \
+	 mem_secure.lo \
          main.lo malloc.lo mem0.lo mem1.lo mem2.lo mem3.lo mem5.lo \
          memdb.lo memjournal.lo \
          mutex.lo mutex_noop.lo mutex_unix.lo mutex_w32.lo \
@@ -244,6 +245,7 @@ SRC = \
   $(TOP)/src/legacy.c \
   $(TOP)/src/loadext.c \
   $(TOP)/src/main.c \
+  $(TOP)/src/mem_secure.c \
   $(TOP)/src/malloc.c \
   $(TOP)/src/mem0.c \
   $(TOP)/src/mem1.c \
@@ -988,6 +990,9 @@ loadext.lo:	$(TOP)/src/loadext.c $(HDR)
 
 main.lo:	$(TOP)/src/main.c $(HDR)
 	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/main.c
+
+mem_secure.lo:	$(TOP)/src/mem_secure.c $(HDR)
+	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/mem_secure.c
 
 malloc.lo:	$(TOP)/src/malloc.c $(HDR)
 	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/malloc.c

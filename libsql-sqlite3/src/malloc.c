@@ -169,6 +169,11 @@ int sqlite3MallocInit(void){
   }
   rc = sqlite3GlobalConfig.m.xInit(sqlite3GlobalConfig.m.pAppData);
   if( rc!=SQLITE_OK ) memset(&mem0, 0, sizeof(mem0));
+
+  /* Initialize wrapper for memory management.*/
+  if( rc==SQLITE_OK ) {
+    libsqlInitMemoryMethods();
+  }
   return rc;
 }
 
